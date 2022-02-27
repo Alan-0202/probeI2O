@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	TCP_POST_URL = "http://21.64.64.200:8018/v1/hc/network/tcp/portstatus"
+	TCP_POST_URL = "http://xxxxx/v1/hc/network/tcp/portstatus"
 	CONTENT_TYPE = "application/json"
 )
 
