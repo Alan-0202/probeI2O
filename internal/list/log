@@ -1,0 +1,6 @@
+{"level":"error","ts":"2022-02-25T16:59:50.005-0800","caller":"list/collect.go:35","msg":"open : no such file or directory"}
+{"level":"error","ts":"2022-02-25T17:01:02.999-0800","caller":"list/collect.go:35","msg":"open : no such file or directory"}
+{"level":"error","ts":"2022-02-25T17:01:44.832-0800","caller":"list/collect.go:35","msg":"open : no such file or directory"}
+{"level":"error","ts":"2022-02-25T17:03:20.435-0800","caller":"list/collect.go:37","msg":"open : no such file or directory"}
+{"level":"error","ts":"2022-02-25T17:05:31.226-0800","caller":"list/collect.go:37","msg":"open : no such file or directory"}
+{"level":"error","ts":"2022-02-25T17:05:41.824-0800","caller":"list/collect.go:37","msg":"open : no such file or directory"}

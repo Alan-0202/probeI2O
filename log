@@ -1,0 +1,72 @@
+{"level":"debug","ts":"2022-02-25T17:14:23.218-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T17:14:43.288-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T17:17:01.583-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T17:20:18.809-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:16:43.886-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:17:11.432-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:19:43.244-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:23:28.538-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:23:38.274-0800","caller":"list/collect.go:46","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:42:38.335-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:43:33.404-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:43:42.693-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:44:05.068-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:48:12.616-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:48:43.955-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:51:06.570-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:51:17.531-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:51:41.690-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:52:50.418-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:53:05.199-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:59:33.965-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T18:59:43.274-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:02:25.110-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:04:37.069-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:04:51.511-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:05:01.075-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:05:05.387-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:05:08.963-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:05:30.144-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:05:33.195-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:05:36.900-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:09.284-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:12.275-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:14.912-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:16.939-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:19.058-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:21.033-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:06:23.082-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"debug","ts":"2022-02-25T19:25:43.501-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"error","ts":"2022-02-25T19:25:48.504-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": dial tcp 21.64.64.200:8018: i/o timeout (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:25:48.504-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:25:48.504-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:25:48.504-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"debug","ts":"2022-02-25T19:45:00.276-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"error","ts":"2022-02-25T19:45:05.282-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:45:05.282-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:45:05.282-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:45:05.282-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"debug","ts":"2022-02-25T19:45:52.012-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"error","ts":"2022-02-25T19:45:57.016-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:45:57.016-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:45:57.018-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T19:45:57.018-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"debug","ts":"2022-02-25T20:43:55.361-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"error","ts":"2022-02-25T20:44:00.370-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:44:00.370-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": dial tcp 21.64.64.200:8018: i/o timeout (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:44:00.370-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": dial tcp 21.64.64.200:8018: i/o timeout (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:44:00.370-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": dial tcp 21.64.64.200:8018: i/o timeout (Client.Timeout exceeded while awaiting headers)"}
+{"level":"info","ts":"2022-02-25T20:46:15.713-0800","caller":"web/router.go:21","msg":"Http start"}
+{"level":"info","ts":"2022-02-25T20:47:05.110-0800","caller":"web/router.go:21","msg":"Http start"}
+{"level":"info","ts":"2022-02-25T20:50:08.935-0800","caller":"web/router.go:21","msg":"Http start"}
+{"level":"debug","ts":"2022-02-25T20:50:08.936-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"error","ts":"2022-02-25T20:50:13.940-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:50:13.940-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:50:13.943-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:50:13.943-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"info","ts":"2022-02-25T20:56:55.103-0800","caller":"web/router.go:21","msg":"Http start"}
+{"level":"debug","ts":"2022-02-25T20:56:55.104-0800","caller":"list/collect.go:45","msg":"EOF"}
+{"level":"error","ts":"2022-02-25T20:57:00.107-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:57:00.107-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": dial tcp 21.64.64.200:8018: i/o timeout (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:57:00.113-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"level":"error","ts":"2022-02-25T20:57:00.113-0800","caller":"probe/app.go:50","msg":"Post \"http://21.64.64.200:8018/v1/hc/network/tcp/portstatus\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
