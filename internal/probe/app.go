@@ -44,7 +44,7 @@ func (ap *appProbe) Post(data interface{}) {
 	if err != nil {
 		log.Error(err)
 		fmt.Println("parse the data ")
-		g.MetricsReqMap.Store(data.(model.Source).Address, "0")
+		g.MetricsReqMap.Store(data.(model.Source).Address, "0.5")
 		return
 	}
 
@@ -52,7 +52,7 @@ func (ap *appProbe) Post(data interface{}) {
 	if err != nil {
 		log.Error(err)
 		fmt.Println("tijiao post")
-		g.MetricsReqMap.Store(data.(model.Source).Address, "0")
+		g.MetricsReqMap.Store(data.(model.Source).Address, "0.5")
 		return
 	}
 	defer res.Body.Close()
@@ -74,7 +74,8 @@ func (ap *appProbe) Post(data interface{}) {
 			g.MetricsReqMap.Store(data.(model.Source).Address, "0.5")
 			return
 		}
-		fmt.Println("budegnyu 200")
+		log.Infof("%v request code != 200.",data.(model.Source).Address)
+		fmt.Println(" != 200")
 		g.MetricsReqMap.Store(data.(model.Source).Address, "0")
 	}
 
@@ -94,7 +95,7 @@ func (ap *appProbe) Post(data interface{}) {
 				Ip:     item.Ip,
 				Port:   item.Port,
 				Meg:    "Ration is not reached !",
-				Value:  0,
+				Value:  -1,
 				Ration: ration * 100,
 				Shop:   g.MetricsIpShop[data.(model.Source).Address],
 			})
