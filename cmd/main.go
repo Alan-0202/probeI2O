@@ -14,9 +14,7 @@ func main() {
 	// crontal to collect data
 	go func() {
 		probe.Do()
-
-
-		ticker := time.NewTicker(*g.ProbeRangeTime * time.Second)
+		ticker := time.NewTicker(*g.ProbeRangeTime)
 		for {
 			select {
 			case <- ticker.C:

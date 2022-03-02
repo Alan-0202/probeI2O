@@ -8,5 +8,5 @@ type MetricsOpts struct {
 	Meg    string
 	Value  int
 	Shop   string
-	Ration int
+	Ration float64
 }

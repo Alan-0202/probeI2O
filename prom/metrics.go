@@ -69,7 +69,8 @@ func (c *Metrics) Collect(ch chan<- prometheus.Metric) {
 				strconv.Itoa(v.Port),
 				v.Meg,
 				v.Shop,
-				strconv.Itoa(v.Ration))
+				//strconv.FormatFloat(v.Ration, 'E', -1, 64))
+				strconv.Itoa(int(v.Ration)))
 		}
 		return true
 	}

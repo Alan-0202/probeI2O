@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	TCP_POST_URL = "http://xxxxx/v1/hc/network/tcp/portstatus"
+	//TCP_POST_URL = "http://xxxxx/v1/hc/network/tcp/portstatus"
 	CONTENT_TYPE = "application/json"
 )
 
@@ -29,11 +29,11 @@ func NewAppProbe() *appProbe {
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
-	client := &http.Client{Timeout: 5 * time.Second, Transport: tr}
+	client := &http.Client{Timeout: 30 * time.Second, Transport: tr}
 
 	return &appProbe{
 		client: client,
-		url: TCP_POST_URL,
+		url: *g.ProbeURL,
 		header: CONTENT_TYPE,
 	}
 }
@@ -43,15 +43,13 @@ func (ap *appProbe) Post(data interface{}) {
 	allBytes, err := json.Marshal(data)
 	if err != nil {
 		log.Error(err)
-		fmt.Println("parse the data ")
-		g.MetricsReqMap.Store(data.(model.Source).Address, "0.5")
+		g.MetricsReqMap.Store(data.(model.Source).Address , "0.5")
 		return
 	}
 
 	res, err := ap.client.Post(ap.url, ap.header, bytes.NewBuffer(allBytes))
 	if err != nil {
 		log.Error(err)
-		fmt.Println("tijiao post")
 		g.MetricsReqMap.Store(data.(model.Source).Address, "0.5")
 		return
 	}
@@ -66,8 +64,6 @@ func (ap *appProbe) Post(data interface{}) {
 
 	if res.StatusCode != 200 {
 		var resBad model.ResBad
-		fmt.Println(resBad.Msg)
-		fmt.Println(res.StatusCode)
 		err := json.Unmarshal(bytes, &resBad)
 		if err != nil {
 			log.Error(err)
@@ -75,8 +71,8 @@ func (ap *appProbe) Post(data interface{}) {
 			return
 		}
 		log.Infof("%v request code != 200.",data.(model.Source).Address)
-		fmt.Println(" != 200")
 		g.MetricsReqMap.Store(data.(model.Source).Address, "0")
+		return
 	}
 
 	var resOk model.RespOk
@@ -89,8 +85,8 @@ func (ap *appProbe) Post(data interface{}) {
 	var metricsOptsSlice []model.MetricsOpts
 	for _, item := range resOk.Status {
 		ration := item.Ratio
-		if ration * 100 < data.(model.Source).Threshold {
-
+		if ration * 100 < float64(data.(model.Source).Threshold) {
+			fmt.Printf("IP: %v, destRation: %v, getRation: %v\n", item.Ip, ration*100, float64(data.(model.Source).Threshold))
 			metricsOptsSlice = append(metricsOptsSlice, model.MetricsOpts{
 				Ip:     item.Ip,
 				Port:   item.Port,
@@ -100,6 +96,7 @@ func (ap *appProbe) Post(data interface{}) {
 				Shop:   g.MetricsIpShop[data.(model.Source).Address],
 			})
 			g.MetricsMap.Store(data.(model.Source).Address, metricsOptsSlice)
+			continue
 		}
 
 		metricsOptsSlice = append(metricsOptsSlice, model.MetricsOpts{
@@ -112,6 +109,5 @@ func (ap *appProbe) Post(data interface{}) {
 		})
 		g.MetricsMap.Store(data.(model.Source).Address, metricsOptsSlice)
 	}
-
 	return
 }

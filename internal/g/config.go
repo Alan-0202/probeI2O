@@ -26,9 +26,10 @@ var (
 var (
 	ListenAndPort = kingpin.Flag("listen_addr", "health_check exporter listen addr").Default(":9200").String()
 	ConcurNum = kingpin.Flag("concur_num", "goroutine number for post").Default("20").Int()
-	ClientTimeOut = kingpin.Flag("cli_timeout", "request the probeAPI client timeout(default: 3s)").Default("3s").Duration()
+	//ClientTimeOut = kingpin.Flag("cli_timeout", "request the probeAPI client timeout(default: 3s)").Default("3s").Duration()
 	SourcePath = kingpin.Flag("source_path", "get the process object").Default("/home/alan/goworkspace/src/I2Oprobe/probelist.txt").String()
-	ProbeRangeTime = kingpin.Flag("probe_time", "How long to read file and probe source(second)").Default("60").Duration()
+	ProbeRangeTime = kingpin.Flag("probe_time", "How long to read file and probe source(second)").Default("10s").Duration()
+	ProbeURL = kingpin.Flag("prober", "This is server for probe").Default("http://21.64.64.200:8018/v1/hc/network/tcp/portstatus").String()
 )
 
 

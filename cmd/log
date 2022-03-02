@@ -1,0 +1,2 @@
+{"level":"info","ts":"2022-03-01T22:55:34.074-0800","caller":"web/router.go:19","msg":"Http start"}
+{"level":"error","ts":"2022-03-01T22:55:34.075-0800","caller":"list/collect.go:36","msg":"open /home/alan/goworkspace/src/I2Oprobe/probelist.txt: no such file or directory"}

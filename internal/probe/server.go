@@ -2,9 +2,11 @@ package probe
 
 import (
 	"I2Oprobe/internal/g"
+	"I2Oprobe/internal/log"
 	"I2Oprobe/internal/model"
 	"fmt"
 	"sync"
+	"time"
 )
 
 type (
@@ -43,7 +45,6 @@ func (s *Server) Handler() {
 		// IP relate with SHOPNAME
 		g.MetricsIpShop[task.(model.Source).Address] = task.(model.Source).Shopname
 		gofunc := func() {
-			fmt.Printf("Consumer: %d\n", task.(model.Source).Shopname)
 			//time.Sleep(1 * time.Second)
 			s.appCli.Post(task)
 			wg.Done()
@@ -52,5 +53,6 @@ func (s *Server) Handler() {
 	}
 
 	wg.Wait()
+	log.Info(fmt.Sprintf("END at %v", time.Now()))
 	fmt.Println("END")
 }

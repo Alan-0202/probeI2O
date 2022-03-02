@@ -6,7 +6,7 @@ type RespOk struct {
 }
 
 type Status struct {
-	Ratio int `json:"ratio"`
+	Ratio float64 `json:"ratio"`
 	Ip    string  `json:"ip"`
 	Port  int  `json:"port"`
 }
