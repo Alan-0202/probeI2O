@@ -11,7 +11,6 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
-	"time"
 )
 
 const (
@@ -30,7 +29,7 @@ func NewAppProbe() *appProbe {
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
-	client := &http.Client{Timeout: 2 * time.Second, Transport: tr}
+	client := &http.Client{Timeout:  *g.OneProbeClientTime , Transport: tr}
 
 	return &appProbe{
 		client: client,
