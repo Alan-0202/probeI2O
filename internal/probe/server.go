@@ -38,6 +38,7 @@ func (s *Server) Run() {
 func (s *Server) Handler() {
 	goConCur := NewGoConCur()
 	wg := &sync.WaitGroup{}
+
 	for i :=0; i < len(s.data); i++{  // don`t use `FOR...RANGE`. Because of valueIndex.
 
 		wg.Add(1)
@@ -55,4 +56,18 @@ func (s *Server) Handler() {
 	wg.Wait()
 	log.Info(fmt.Sprintf("END at %v", time.Now()))
 	fmt.Println("END")
+
+
+	//res := func(k, v interface{}) bool{
+	//	g.MetricsMapCache.Store(k.(string), v.([]model.MetricsOpts))
+	//	return true
+	//}
+	//g.MetricsMap.Range(res)
+	//
+	//resBad := func(k,v interface{})bool {
+	//	g.MetricsReqMapCache.Store(k.(string), v.(string))
+	//	return true
+	//}
+	//g.MetricsReqMapCache.Range(resBad)
+
 }

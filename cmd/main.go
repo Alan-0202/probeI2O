@@ -2,9 +2,7 @@ package main
 
 import (
 	"I2Oprobe/internal/g"
-	"I2Oprobe/internal/probe"
 	"I2Oprobe/web"
-	"time"
 )
 
 func main() {
@@ -12,16 +10,16 @@ func main() {
 
 
 	// crontal to collect data
-	go func() {
-		probe.Do()
-		ticker := time.NewTicker(*g.ProbeRangeTime)
-		for {
-			select {
-			case <- ticker.C:
-				probe.Do()
-			}
-		}
-	}()
+	//go func() {
+	//	probe.Do()
+	//	ticker := time.NewTicker(*g.ProbeRangeTime)
+	//	for {
+	//		select {
+	//		case <- ticker.C:
+	//			probe.Do()
+	//		}
+	//	}
+	//}()
 
 	web.Start()
 }

@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -29,7 +30,7 @@ func NewAppProbe() *appProbe {
 	tr := &http.Transport{
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
-	client := &http.Client{Timeout: 30 * time.Second, Transport: tr}
+	client := &http.Client{Timeout: 2 * time.Second, Transport: tr}
 
 	return &appProbe{
 		client: client,
@@ -88,24 +89,26 @@ func (ap *appProbe) Post(data interface{}) {
 		if ration * 100 < float64(data.(model.Source).Threshold) {
 			fmt.Printf("IP: %v, destRation: %v, getRation: %v\n", item.Ip, ration*100, float64(data.(model.Source).Threshold))
 			metricsOptsSlice = append(metricsOptsSlice, model.MetricsOpts{
+				Address: data.(model.Source).Address,
 				Ip:     item.Ip,
 				Port:   item.Port,
 				Meg:    "Ration is not reached !",
 				Value:  -1,
 				Ration: ration * 100,
-				Shop:   g.MetricsIpShop[data.(model.Source).Address],
+				Shop:   strings.Replace(g.MetricsIpShop[data.(model.Source).Address], "\n", "", -1),
 			})
 			g.MetricsMap.Store(data.(model.Source).Address, metricsOptsSlice)
 			continue
 		}
 
 		metricsOptsSlice = append(metricsOptsSlice, model.MetricsOpts{
+			Address: data.(model.Source).Address,
 			Ip:     item.Ip,
 			Port:   item.Port,
 			Meg:    "Ration is reached !",
 			Value:  1,
 			Ration: ration * 100,
-			Shop:   g.MetricsIpShop[data.(model.Source).Address],
+			Shop:   strings.Replace(g.MetricsIpShop[data.(model.Source).Address], "\n", "", -1),
 		})
 		g.MetricsMap.Store(data.(model.Source).Address, metricsOptsSlice)
 	}

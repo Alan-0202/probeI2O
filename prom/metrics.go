@@ -3,6 +3,7 @@ package prom
 import (
 	"I2Oprobe/internal/g"
 	"I2Oprobe/internal/model"
+	"I2Oprobe/internal/probe"
 	"github.com/prometheus/client_golang/prometheus"
 	"strconv"
 	"sync"
@@ -22,6 +23,7 @@ func NewGlobalMetric(namespace string, metricName string, help string, labels []
 }
 
 func NewMetrics(ns string) *Metrics {
+
 	ms["check"] = NewGlobalMetric(ns, "bad_request", "bad http request", []string{"address"})
 
 	//Ip     string
@@ -30,7 +32,7 @@ func NewMetrics(ns string) *Metrics {
 	//Value  float64
 	//Shop   string
 	//Ration float64
-	ms["result"] = NewGlobalMetric(ns, "result_request", "get ration", []string{"ip", "port", "Meg", "shop", "ration"})
+	ms["result"] = NewGlobalMetric(ns, "result_request", "get ration", []string{"probed","ip", "port", "Meg", "shop", "ration"})
 	return &Metrics{
 		metrics: ms,
 	}
@@ -44,8 +46,13 @@ func (c *Metrics) Describe(ch chan<- *prometheus.Desc) {
 
 
 func (c *Metrics) Collect(ch chan<- prometheus.Metric) {
+
+
+
 	c.mutex.Lock()
 	defer c.mutex.Unlock()
+
+	probe.Do()
 
 	result := func(k,v interface{}) bool {
 
@@ -65,6 +72,7 @@ func (c *Metrics) Collect(ch chan<- prometheus.Metric) {
 		for _,v := range val.([]model.MetricsOpts) {
 			ch <- prometheus.MustNewConstMetric(c.metrics["result"], prometheus.GaugeValue,
 				float64(v.Value),
+				v.Address,
 				v.Ip,
 				strconv.Itoa(v.Port),
 				v.Meg,
@@ -76,5 +84,6 @@ func (c *Metrics) Collect(ch chan<- prometheus.Metric) {
 	}
 
 	g.MetricsMap.Range(goodRes)
+
 
 }
