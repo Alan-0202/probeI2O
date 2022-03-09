@@ -2,7 +2,9 @@ package g
 
 import (
 	"I2Oprobe/internal/model"
+	"crypto/tls"
 	"github.com/alecthomas/kingpin"
+	"net/http"
 	"sync"
 )
 
@@ -40,3 +42,19 @@ func ConfigParse() {
 	kingpin.HelpFlag.Short('h')
 	kingpin.Parse()
 }
+
+
+
+// email client
+func NewClient()*http.Client {
+	tr := &http.Transport{
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+	client := &http.Client{Timeout:  *OneProbeClientTime , Transport: tr}
+
+	return  client
+}
+
+var (
+	GClient = NewClient()
+)

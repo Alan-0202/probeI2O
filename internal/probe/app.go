@@ -5,7 +5,6 @@ import (
 	"I2Oprobe/internal/log"
 	"I2Oprobe/internal/model"
 	"bytes"
-	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -26,13 +25,13 @@ type appProbe struct {
 
 func NewAppProbe() *appProbe {
 	// init client
-	tr := &http.Transport{
-		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-	}
-	client := &http.Client{Timeout:  *g.OneProbeClientTime , Transport: tr}
+	//tr := &http.Transport{
+	//	TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	//}
+	//client := &http.Client{Timeout:  *g.OneProbeClientTime , Transport: tr}
 
 	return &appProbe{
-		client: client,
+		client: g.GClient,
 		url: *g.ProbeURL,
 		header: CONTENT_TYPE,
 	}
